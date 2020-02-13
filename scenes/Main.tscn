@@ -8,7 +8,12 @@ load_path = "res://.import/water.png-60eb5d11192d61f791951f83acef7554.stex"
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -537.692, -726.055 )
+scale = Vector2( 1.01142, 1.80727 )
 texture = SubResource( 1 )
 offset = Vector2( 600, 350 )
 region_enabled = true
@@ -16,4 +21,3 @@ region_rect = Rect2( 0, 0, 1200, 700 )
 region_filter_clip = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 418.72, 285.756 )

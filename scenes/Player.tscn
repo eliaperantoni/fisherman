@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/player.png" type="Texture" id=1]
+[ext_resource path="res://scripts/playerController.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 46.7745
+height = 33.5766
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="RigidBody" type="RigidBody2D" parent="."]
+mode = 2
+gravity_scale = 0.0
+
+[node name="CollisionShape" type="CollisionShape2D" parent="RigidBody"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="RigidBody"]
+scale = Vector2( 4.28049, 4.28049 )
+texture = ExtResource( 1 )

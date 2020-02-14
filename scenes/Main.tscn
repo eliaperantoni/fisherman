@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/coolerwater.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/sky.png" type="Texture" id=4]
 [ext_resource path="res://assets/cloud01.png" type="Texture" id=5]
 [ext_resource path="res://assets/surface.png" type="Texture" id=6]
+[ext_resource path="res://assets/LightDampening.tres" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 640, 1590 )
@@ -76,5 +77,12 @@ region_rect = Rect2( 16, 0, 2048, 32 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="LightDampener" type="Sprite" parent="."]
+position = Vector2( 0, 1800 )
+rotation = -1.5708
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 3600, 2048 )
 [connection signal="body_entered" from="Water/Area" to="Player" method="_on_water_entered"]
 [connection signal="body_exited" from="Water/Area" to="Player" method="_on_water_exited"]

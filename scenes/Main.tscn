@@ -20,8 +20,8 @@ current = true
 zoom = Vector2( 0.4, 0.4 )
 
 [node name="BorderLeft" parent="." instance=ExtResource( 3 )]
-position = Vector2( -625, 0 )
+position = Vector2( -625, -250 )
 
 [node name="BorderRight" parent="." instance=ExtResource( 3 )]
-position = Vector2( 625, 0 )
+position = Vector2( 625, -250 )
 rotation = 3.14159

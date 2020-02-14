@@ -1,13 +1,26 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/coolerwater.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Border.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sky.png" type="Texture" id=4]
+[ext_resource path="res://assets/cloud01.png" type="Texture" id=5]
+[ext_resource path="res://assets/surface.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 640, 1592 )
+extents = Vector2( 640, 1590 )
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Sky" type="Sprite" parent="."]
+position = Vector2( 0, -256 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2048, 512 )
+
+[node name="Cloud01" type="Sprite" parent="Sky"]
+position = Vector2( -105.221, 173.699 )
+texture = ExtResource( 5 )
 
 [node name="Water" type="Node2D" parent="."]
 position = Vector2( 0, 1800 )
@@ -23,7 +36,7 @@ region_filter_clip = true
 ]]
 
 [node name="CollisionShape" type="CollisionShape2D" parent="Water/Area"]
-position = Vector2( 0, -192 )
+position = Vector2( 0, -190 )
 shape = SubResource( 1 )
 
 [node name="Borders" type="Node2D" parent="."]
@@ -43,10 +56,25 @@ position = Vector2( 0, 1384 )
 rotation = -1.5708
 length = 1280
 
+[node name="SurfaceBack" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2048, 32 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 6 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 zoom = Vector2( 0.4, 0.4 )
+
+[node name="SurfaceFront" type="Sprite" parent="."]
+position = Vector2( 0, 3 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 16, 0, 2048, 32 )
+__meta__ = {
+"_editor_description_": ""
+}
 [connection signal="body_entered" from="Water/Area" to="Player" method="_on_water_entered"]
 [connection signal="body_exited" from="Water/Area" to="Player" method="_on_water_exited"]

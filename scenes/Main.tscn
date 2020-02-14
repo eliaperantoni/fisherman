@@ -5,25 +5,29 @@
 [ext_resource path="res://scenes/Border.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 640, 1800 )
+extents = Vector2( 640, 1592 )
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Water" type="StaticBody2D" parent="."]
+[node name="Water" type="Node2D" parent="."]
+position = Vector2( 0, 1800 )
 
-[node name="CollisionShape" type="CollisionShape2D" parent="Water"]
-shape = SubResource( 1 )
-disabled = true
-
-[node name="Sprite" type="Sprite" parent="Water" groups=[
-"Swimmable",
-]]
+[node name="Sprite" type="Sprite" parent="Water"]
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 2048, 3600 )
 region_filter_clip = true
 
-[node name="Borders" type="Node" parent="."]
+[node name="Area" type="Area2D" parent="Water" groups=[
+"Swimmable",
+]]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Water/Area"]
+position = Vector2( 0, -192 )
+shape = SubResource( 1 )
+
+[node name="Borders" type="Node2D" parent="."]
+position = Vector2( 0, 1800 )
 
 [node name="Left" parent="Borders" instance=ExtResource( 3 )]
 position = Vector2( -625, -400 )
@@ -44,3 +48,5 @@ length = 1280
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 zoom = Vector2( 0.4, 0.4 )
+[connection signal="body_entered" from="Water/Area" to="Player" method="_on_water_entered"]
+[connection signal="body_exited" from="Water/Area" to="Player" method="_on_water_exited"]

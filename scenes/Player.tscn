@@ -9,7 +9,9 @@ height = 9.2343
 
 [node name="RigidBody" type="RigidBody2D"]
 mode = 2
+mass = 100.0
 gravity_scale = 0.0
+contact_monitor = true
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]

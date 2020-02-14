@@ -1,7 +1,9 @@
 extends RigidBody2D
 
 export var dragCoefficient = 0.1
-export var impulseMultiplier = 3000
+export var impulseMultiplier = 50000
+
+var canSwim = true
 
 func _physics_process(delta):
 	self.linear_velocity *= (1 - dragCoefficient)
@@ -23,4 +25,19 @@ func _physics_process(delta):
 
 	direction = direction.normalized()
 
-	self.apply_central_impulse(direction * impulseMultiplier * delta)
+	if not canSwim:
+		direction.y = 0
+
+	self.apply_central_impulse(direction * delta * impulseMultiplier * (10 if Input.is_key_pressed(KEY_SHIFT) else 1))
+
+
+func _on_water_entered(body):
+	if body == self:
+		canSwim = true
+		self.gravity_scale = 0
+
+
+func _on_water_exited(body):
+	if body == self:
+		canSwim = false
+		self.gravity_scale = 3

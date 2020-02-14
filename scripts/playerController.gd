@@ -1,16 +1,13 @@
-extends Node2D
+extends RigidBody2D
 
-export var dragCoefficien = 0.1
+export var dragCoefficient = 0.1
 export var impulseMultiplier = 3000
 
-var body: RigidBody2D
-
-func _ready():
-	body = $RigidBody
-
 func _physics_process(delta):
-	body.linear_velocity *= (1 - dragCoefficien)
+	self.linear_velocity *= (1 - dragCoefficient)
+
 	var direction = Vector2(0, 0)
+
 	#D / right
 	if Input.is_action_pressed("ui_right"):
 		direction += Vector2(1, 0)
@@ -23,5 +20,7 @@ func _physics_process(delta):
 	#W / up
 	if Input.is_action_pressed("ui_up"):
 		direction += Vector2(0, -1)
-	body.apply_central_impulse(direction * impulseMultiplier * delta)
-	get_parent().get_node("Camera").position = body.position
+
+	direction = direction.normalized()
+
+	self.apply_central_impulse(direction * impulseMultiplier * delta)

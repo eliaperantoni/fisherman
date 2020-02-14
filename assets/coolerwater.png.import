@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/water.png-60eb5d11192d61f791951f83acef7554.stex"
+path="res://.import/coolerwater.png-f916bb59500ef62e13091b7cf7671a8d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/water.png"
-dest_files=[ "res://.import/water.png-60eb5d11192d61f791951f83acef7554.stex" ]
+source_file="res://assets/coolerwater.png"
+dest_files=[ "res://.import/coolerwater.png-f916bb59500ef62e13091b7cf7671a8d.stex" ]
 
 [params]
 

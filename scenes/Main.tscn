@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/coolerwater.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/cloud01.png" type="Texture" id=5]
 [ext_resource path="res://assets/surface.png" type="Texture" id=6]
 [ext_resource path="res://assets/LightDampening.tres" type="Texture" id=7]
+[ext_resource path="res://scenes/Interface.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 640, 1590 )
@@ -69,6 +70,10 @@ position = Vector2( 0, 6 )
 current = true
 zoom = Vector2( 0.4, 0.4 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="Interface" parent="Player/CanvasLayer" instance=ExtResource( 8 )]
+
 [node name="SurfaceFront" type="Sprite" parent="."]
 position = Vector2( 0, 3 )
 texture = ExtResource( 6 )
@@ -79,7 +84,7 @@ __meta__ = {
 }
 
 [node name="LightDampener" type="Sprite" parent="."]
-position = Vector2( 0, 1800 )
+position = Vector2( -7.71649, 1797.43 )
 rotation = -1.5708
 texture = ExtResource( 7 )
 region_enabled = true

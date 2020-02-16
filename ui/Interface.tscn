@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/ui_interface/health_back.png" type="Texture" id=1]
-[ext_resource path="res://assets/ui_interface/theme_font.tres" type="Theme" id=2]
-[ext_resource path="res://assets/ui_interface/health_fill.png" type="Texture" id=3]
-[ext_resource path="res://assets/ui_interface/oxygen_fill.png" type="Texture" id=4]
+[ext_resource path="res://ui/life_bar.png" type="Texture" id=1]
+[ext_resource path="res://assets/themes_and_fonts/theme_font.tres" type="Theme" id=2]
+[ext_resource path="res://ui/background_bar.png" type="Texture" id=3]
+[ext_resource path="res://ui/oxygen_bar.png" type="Texture" id=4]
+[ext_resource path="res://ui/Interface.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -12,13 +13,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
 margin_bottom = -600.0
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LifeBar" type="HBoxContainer" parent="."]
+margin_top = 20.0
 margin_right = 351.0
 margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="LifeBar"]
 margin_right = 152.0
@@ -33,30 +39,27 @@ __meta__ = {
 
 [node name="TextureProgress" type="TextureProgress" parent="LifeBar"]
 margin_left = 156.0
-margin_right = 220.0
-margin_bottom = 32.0
+margin_right = 356.0
+margin_bottom = 31.0
 value = 100.0
-texture_under = ExtResource( 1 )
-texture_progress = ExtResource( 3 )
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LifeBar2" type="HBoxContainer" parent="."]
+[node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -100.0
-margin_top = 10.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="LifeBar2"]
-margin_right = 169.0
+margin_left = -84.5
+margin_top = 20.0
+margin_right = 84.5
 margin_bottom = 31.0
+rect_scale = Vector2( 0.983039, 1 )
 theme = ExtResource( 2 )
 custom_styles/normal = SubResource( 1 )
 text = "DEEP - 1453 "
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -64,7 +67,8 @@ __meta__ = {
 [node name="OxygenBar" type="HBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -300.0
+margin_left = -357.0
+margin_top = 20.0
 margin_right = 1.0
 margin_bottom = 32.0
 __meta__ = {
@@ -72,22 +76,22 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="OxygenBar"]
-margin_right = 91.0
+margin_right = 150.0
 margin_bottom = 31.0
 theme = ExtResource( 2 )
 custom_styles/normal = SubResource( 1 )
-text = "20/100"
+text = "O2 100/100"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureProgress" type="TextureProgress" parent="OxygenBar"]
-margin_left = 95.0
-margin_right = 159.0
-margin_bottom = 32.0
-value = 50.0
-texture_under = ExtResource( 1 )
+margin_left = 154.0
+margin_right = 354.0
+margin_bottom = 31.0
+value = 100.0
+texture_under = ExtResource( 3 )
 texture_progress = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false

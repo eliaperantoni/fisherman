@@ -91,3 +91,4 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 3600, 2048 )
 [connection signal="body_entered" from="Water/Area" to="Player" method="_on_water_entered"]
 [connection signal="body_exited" from="Water/Area" to="Player" method="_on_water_exited"]
+[connection signal="playerMoved" from="Player" to="Player/CanvasLayer/Interface" method="_on_Player_playerMoved"]

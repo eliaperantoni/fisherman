@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/main/assets/water.png" type="Texture" id=1]
 [ext_resource path="res://scenes/main/assets/cloud01.png" type="Texture" id=2]
@@ -7,6 +7,11 @@
 [ext_resource path="res://scenes/main/assets/light_dampening.tres" type="Texture" id=5]
 [ext_resource path="res://scenes/border/Border.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/mobs/pacific/assets/fish_vibrissae_musicalis.png" type="Texture" id=8]
+[ext_resource path="res://scenes/mobs/aggressive/assets/fish_iperoglife.png" type="Texture" id=9]
+[ext_resource path="res://scenes/mobs/pacific/assets/fish_oblungo_dementis.png" type="Texture" id=10]
+[ext_resource path="res://scenes/mobs/pacific/assets/fish_carango_crystal.png" type="Texture" id=11]
+[ext_resource path="res://scenes/mobs/pacific/assets/fish_carango.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 640, 1590 )
@@ -29,6 +34,7 @@ texture = ExtResource( 2 )
 [node name="Water" type="Node2D" parent="."]
 position = Vector2( 0, 1800 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -49,6 +55,7 @@ shape = SubResource( 1 )
 [node name="Borders" type="Node2D" parent="."]
 position = Vector2( 0, 1800 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -102,5 +109,25 @@ region_rect = Rect2( 0, 0, 3600, 2048 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="FishMusicalis" type="Sprite" parent="."]
+position = Vector2( -42.832, 40.2096 )
+texture = ExtResource( 8 )
+
+[node name="FishCarango" type="Sprite" parent="."]
+position = Vector2( 2.44754, 42.3075 )
+texture = ExtResource( 12 )
+
+[node name="FishCarangoCristalli" type="Sprite" parent="."]
+position = Vector2( -40.5593, 71.1535 )
+texture = ExtResource( 11 )
+
+[node name="FishOblungo" type="Sprite" parent="."]
+position = Vector2( -9.79017, 73.9507 )
+texture = ExtResource( 10 )
+
+[node name="FishIperoglife" type="Sprite" parent="."]
+position = Vector2( 19.93, 74.1255 )
+texture = ExtResource( 9 )
 [connection signal="body_entered" from="Water/Area" to="Player" method="_on_water_entered"]
 [connection signal="body_exited" from="Water/Area" to="Player" method="_on_water_exited"]

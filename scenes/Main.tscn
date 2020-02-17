@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/coolerwater.png" type="Texture" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://assets/fish3.png" type="Texture" id=9]
 [ext_resource path="res://assets/fish2.png" type="Texture" id=10]
 [ext_resource path="res://assets/fish4.png" type="Texture" id=11]
+[ext_resource path="res://assets/fish_vibrissae_musicalis.png" type="Texture" id=12]
+[ext_resource path="res://assets/fish_carango.png" type="Texture" id=13]
+[ext_resource path="res://assets/fish_oblungo_dementis.png" type="Texture" id=14]
+[ext_resource path="res://assets/fish_carango_crystal.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 640, 1590 )
@@ -120,5 +124,21 @@ texture = ExtResource( 9 )
 [node name="Fish4" type="Sprite" parent="."]
 position = Vector2( -39.9336, 22.4512 )
 texture = ExtResource( 11 )
+
+[node name="FishMusicalis" type="Sprite" parent="."]
+position = Vector2( -26.9791, 33.5788 )
+texture = ExtResource( 12 )
+
+[node name="FishCarango" type="Sprite" parent="."]
+position = Vector2( -50.0978, 88.239 )
+texture = ExtResource( 13 )
+
+[node name="FishCarangoCrystal" type="Sprite" parent="."]
+position = Vector2( 23.1444, 80.5099 )
+texture = ExtResource( 15 )
+
+[node name="FishLog" type="Sprite" parent="."]
+position = Vector2( -9.42815, 54.0102 )
+texture = ExtResource( 14 )
 [connection signal="body_entered" from="Water/Area" to="Player" method="_on_water_entered"]
 [connection signal="body_exited" from="Water/Area" to="Player" method="_on_water_exited"]

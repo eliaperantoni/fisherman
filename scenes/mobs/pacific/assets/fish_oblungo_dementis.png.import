@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fish2.png-792a68da13ace066e8dc17eec0f86d42.stex"
+path="res://.import/fish_oblungo_dementis.png-ffd835c110bbc8930a27a899bc1f24f9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fish2.png"
-dest_files=[ "res://.import/fish2.png-792a68da13ace066e8dc17eec0f86d42.stex" ]
+source_file="res://scenes/mobs/pacific/assets/fish_oblungo_dementis.png"
+dest_files=[ "res://.import/fish_oblungo_dementis.png-ffd835c110bbc8930a27a899bc1f24f9.stex" ]
 
 [params]
 

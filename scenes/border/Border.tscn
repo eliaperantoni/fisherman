@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/border.png" type="Texture" id=1]
-[ext_resource path="res://scripts/setBorderLength.gd" type="Script" id=2]
+[ext_resource path="res://scenes/border/assets/border.png" type="Texture" id=1]
+[ext_resource path="res://scenes/border/set_border_length.gd" type="Script" id=2]
 
 [sub_resource type="LineShape2D" id=1]
 

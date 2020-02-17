@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fish_carango.png-d8d0188d935b41855d1f3903b64083ae.stex"
+path="res://.import/border.png-888e358d9c6785bd786b86a0adfd99f5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fish_carango.png"
-dest_files=[ "res://.import/fish_carango.png-d8d0188d935b41855d1f3903b64083ae.stex" ]
+source_file="res://scenes/border/assets/border.png"
+dest_files=[ "res://.import/border.png-888e358d9c6785bd786b86a0adfd99f5.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

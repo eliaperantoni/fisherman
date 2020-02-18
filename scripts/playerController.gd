@@ -27,8 +27,8 @@ func _physics_process(delta):
 	if not canSwim:
 		direction.y = 0
 	self.apply_central_impulse(direction * delta * impulseMultiplier * (10 if Input.is_key_pressed(KEY_SHIFT) else 1))
-	if direction != Vector2(0,0):
-		emit_signal("playerMoved", canSwim, position)
+	if direction != Vector2(0,0) or not canSwim:
+		emit_signal("playerMoved", position)
 
 func _on_water_entered(body):
 	if body == self:
@@ -38,4 +38,4 @@ func _on_water_entered(body):
 func _on_water_exited(body):
 	if body == self:
 		canSwim = false
-		self.gravity_scale = 3
+		self.gravity_scale = 9.8

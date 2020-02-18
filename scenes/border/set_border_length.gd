@@ -1,4 +1,5 @@
 extends StaticBody2D
+tool
 
 export var length = 32
 onready var sprite = $Sprite

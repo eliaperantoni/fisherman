@@ -5,7 +5,6 @@ func _ready():
 	_set_life(100)
 	_set_deep(0)
 
-	
 func _set_oxygen(value):
 	$OxygenBar/TextureProgress.value = value
 	$OxygenBar/Label.text = "O2 %s/100" % value
@@ -25,3 +24,6 @@ func _on_Player_playerMoved(position):
 		value=0
 	value = int(value)
 	_set_deep(value)
+
+func _on_Player_oxygenModified(value):
+	_set_oxygen(value);

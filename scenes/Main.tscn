@@ -79,6 +79,13 @@ zoom = Vector2( 0.2, 0.2 )
 
 [node name="Interface" parent="Player/CanvasLayer" instance=ExtResource( 8 )]
 
+[node name="OxygenTimer" type="Timer" parent="Player"]
+wait_time = 20.0
+one_shot = true
+
+[node name="OxygenRefillTimer" type="Timer" parent="Player"]
+wait_time = 2.0
+
 [node name="SurfaceFront" type="Sprite" parent="."]
 material = ExtResource( 9 )
 position = Vector2( 0, 3 )
@@ -97,4 +104,6 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 3600, 2048 )
 [connection signal="body_entered" from="Water/Area" to="Player" method="_on_water_entered"]
 [connection signal="body_exited" from="Water/Area" to="Player" method="_on_water_exited"]
+[connection signal="oxygenModified" from="Player" to="Player/CanvasLayer/Interface" method="_on_Player_oxygenModified"]
 [connection signal="playerMoved" from="Player" to="Player/CanvasLayer/Interface" method="_on_Player_playerMoved"]
+[connection signal="timeout" from="Player/OxygenTimer" to="Player" method="_on_OxygenTimer_timeout"]

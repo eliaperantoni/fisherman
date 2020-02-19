@@ -8,15 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "BasicPacificFish",
+"language": "GDScript",
+"path": "res://scenes/mobs/pacific/basic_pacific_fish_controller.gd"
+} ]
 _global_script_class_icons={
-
+"BasicPacificFish": ""
 }
 
 [application]
 
 config/name="Fisherman"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/main/Main.tscn"
 config/icon="res://icon.png"
 
 [input]

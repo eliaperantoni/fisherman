@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/player/player.png" type="Texture" id=1]
+[ext_resource path="res://scenes/player/player_controller.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 11.297
+height = 9.2343
+
+[node name="RigidBody" type="RigidBody2D"]
+mode = 2
+mass = 100.0
+gravity_scale = 0.0
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

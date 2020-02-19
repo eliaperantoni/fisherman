@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/main/assets/cloud01.png" type="Texture" id=2]
 [ext_resource path="res://scenes/main/assets/sky.png" type="Texture" id=3]
 [ext_resource path="res://scenes/main/assets/surface.png" type="Texture" id=4]
-[ext_resource path="res://scenes/main/assets/light_dampening.tres" type="Texture" id=5]
+[ext_resource path="res://scenes/main/assets/darkness.png" type="Texture" id=5]
 [ext_resource path="res://scenes/border/Border.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/interface/Interface.tscn" type="PackedScene" id=9]
@@ -84,6 +84,18 @@ __meta__ = {
 
 [node name="Fishes" type="Node2D" parent="."]
 script = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Darkness" type="Light2D" parent="."]
+position = Vector2( 0, 1792 )
+texture = ExtResource( 5 )
+mode = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, 6 )
@@ -105,16 +117,6 @@ region_rect = Rect2( 16, 0, 2048, 32 )
 __meta__ = {
 "_edit_lock_": true,
 "_editor_description_": ""
-}
-
-[node name="LightDampener" type="Sprite" parent="."]
-position = Vector2( -8.71649, 1796.43 )
-rotation = -1.5708
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 3600, 2048 )
-__meta__ = {
-"_edit_lock_": true
 }
 [connection signal="body_entered" from="Water/Area" to="Player" method="_on_water_entered"]
 [connection signal="body_exited" from="Water/Area" to="Player" method="_on_water_exited"]

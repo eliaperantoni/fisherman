@@ -42,7 +42,7 @@ func _update_trip(force_downward = false):
 	direction = direction.rotated(rand_range(0, max_radius))
 	direction = direction.normalized()
 	
-	sprite.flip_h = direction.x < 0
+	sprite.scale.x = -1 if direction.x < 0 else 1
 	
 	var wait_time = rand_range(min_change_trip, max_change_trip)
 	change_trip_ticker.start(wait_time)

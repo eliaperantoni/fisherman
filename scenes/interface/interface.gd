@@ -1,4 +1,4 @@
-extends NinePatchRect
+extends Control
 
 func _ready():
 	_set_oxygen(100)
@@ -6,17 +6,15 @@ func _ready():
 	_set_deep(0)
 
 func _set_oxygen(value):
-	$OxygenBar/TextureProgress.value = value
-	$OxygenBar/Label.text = "O2 %s/100" % value
+	$Oxygen/Bar.value = value
+	$Oxygen/Label.text = "O2 %s/100" % value
 
 func _set_life(value):
-	$LifeBar/TextureProgress.value = value
-	$LifeBar/Label.text = "HB %s/100" % value
+	$Life/Bar.value = value
+	$Life/Label.text = "HB %s/100" % value
 
 func _set_deep(value):
-
 	$DeepCounter.text = "DEEP - %s m" % value	
-
 
 func _on_Player_playerMoved(position):
 	var value = position.y/5

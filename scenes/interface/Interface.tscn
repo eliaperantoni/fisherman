@@ -8,25 +8,23 @@
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
-[node name="Interface" type="NinePatchRect"]
+[node name="Interface" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
 margin_bottom = -600.0
 script = ExtResource( 5 )
+
+[node name="Life" type="HBoxContainer" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 356.0
+margin_bottom = 31.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LifeBar" type="HBoxContainer" parent="."]
-margin_top = 20.0
-margin_right = 351.0
-margin_bottom = 32.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="LifeBar"]
+[node name="Label" type="Label" parent="Life"]
 margin_right = 152.0
 margin_bottom = 31.0
 theme = ExtResource( 4 )
@@ -37,7 +35,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureProgress" type="TextureProgress" parent="LifeBar"]
+[node name="Bar" type="TextureProgress" parent="Life"]
 margin_left = 156.0
 margin_right = 356.0
 margin_bottom = 31.0
@@ -52,10 +50,9 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -84.5
-margin_top = 20.0
+margin_top = 10.0
 margin_right = 84.5
 margin_bottom = 31.0
-rect_scale = Vector2( 0.983039, 1 )
 theme = ExtResource( 4 )
 custom_styles/normal = SubResource( 1 )
 text = "DEEP - 1453 "
@@ -64,18 +61,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OxygenBar" type="HBoxContainer" parent="."]
+[node name="Oxygen" type="HBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -357.0
-margin_top = 20.0
-margin_right = 1.0
-margin_bottom = 32.0
+margin_left = -364.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = 31.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="OxygenBar"]
+[node name="Label" type="Label" parent="Oxygen"]
 margin_right = 150.0
 margin_bottom = 31.0
 theme = ExtResource( 4 )
@@ -86,7 +83,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureProgress" type="TextureProgress" parent="OxygenBar"]
+[node name="Bar" type="TextureProgress" parent="Oxygen"]
 margin_left = 154.0
 margin_right = 354.0
 margin_bottom = 31.0

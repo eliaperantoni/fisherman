@@ -122,4 +122,4 @@ __meta__ = {
 [node name="Interface" parent="CanvasLayer" instance=ExtResource( 9 )]
 [connection signal="body_entered" from="Water/Area" to="Player" method="_on_water_entered"]
 [connection signal="body_exited" from="Water/Area" to="Player" method="_on_water_exited"]
-[connection signal="player_moved" from="Player" to="CanvasLayer/Interface" method="_on_Player_playerMoved"]
+[connection signal="oxygenModified" from="Player" to="CanvasLayer/Interface" method="_on_Player_oxygenModified"]

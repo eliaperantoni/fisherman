@@ -106,10 +106,6 @@ position = Vector2( 0, 6 )
 current = true
 zoom = Vector2( 0.2, 0.2 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
-
-[node name="Interface" parent="Player/CanvasLayer" instance=ExtResource( 9 )]
-
 [node name="SurfaceFront" type="Sprite" parent="."]
 material = ExtResource( 10 )
 position = Vector2( 0, 3 )
@@ -120,6 +116,10 @@ __meta__ = {
 "_edit_lock_": true,
 "_editor_description_": ""
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Interface" parent="CanvasLayer" instance=ExtResource( 9 )]
 [connection signal="body_entered" from="Water/Area" to="Player" method="_on_water_entered"]
 [connection signal="body_exited" from="Water/Area" to="Player" method="_on_water_exited"]
-[connection signal="player_moved" from="Player" to="Player/CanvasLayer/Interface" method="_on_Player_playerMoved"]
+[connection signal="player_moved" from="Player" to="CanvasLayer/Interface" method="_on_Player_playerMoved"]

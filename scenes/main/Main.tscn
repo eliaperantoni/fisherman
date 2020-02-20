@@ -1,0 +1,125 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/main/assets/water.png" type="Texture" id=1]
+[ext_resource path="res://scenes/main/assets/cloud01.png" type="Texture" id=2]
+[ext_resource path="res://scenes/main/assets/sky.png" type="Texture" id=3]
+[ext_resource path="res://scenes/main/assets/surface.png" type="Texture" id=4]
+[ext_resource path="res://scenes/main/assets/darkness.png" type="Texture" id=5]
+[ext_resource path="res://scenes/border/Border.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/main/spawner.gd" type="Script" id=8]
+[ext_resource path="res://scenes/interface/Interface.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/main/assets/surface.material" type="Material" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 640, 1590 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sky" type="Sprite" parent="."]
+position = Vector2( 0, -256 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2048, 512 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cloud01" type="Sprite" parent="Sky"]
+position = Vector2( -105.221, 173.699 )
+texture = ExtResource( 2 )
+
+[node name="Water" type="Node2D" parent="."]
+position = Vector2( 0, 1800 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Water"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2048, 3600 )
+region_filter_clip = true
+
+[node name="Area" type="Area2D" parent="Water" groups=[
+"Swimmable",
+]]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Water/Area"]
+position = Vector2( -0.184021, -190 )
+shape = SubResource( 1 )
+
+[node name="Borders" type="Node2D" parent="."]
+position = Vector2( 0, 1800 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Left" parent="Borders" instance=ExtResource( 6 )]
+position = Vector2( -625, -400 )
+physics_material_override = null
+length = 3600
+
+[node name="Right" parent="Borders" instance=ExtResource( 6 )]
+position = Vector2( 625, -400 )
+rotation = 3.14159
+physics_material_override = null
+length = 3600
+
+[node name="Bottom" parent="Borders" instance=ExtResource( 6 )]
+position = Vector2( 0, 1384 )
+rotation = -1.5708
+physics_material_override = null
+length = 1280
+
+[node name="SurfaceBack" type="Sprite" parent="."]
+material = ExtResource( 10 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2048, 32 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Fishes" type="Node2D" parent="."]
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+initial_spawn_amount = 1000
+
+[node name="Darkness" type="Light2D" parent="."]
+position = Vector2( 0, 1792 )
+texture = ExtResource( 5 )
+mode = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 6 )
+
+[node name="Camera" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.2, 0.2 )
+
+[node name="SurfaceFront" type="Sprite" parent="."]
+material = ExtResource( 10 )
+position = Vector2( 0, 3 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 0, 2048, 32 )
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Interface" parent="CanvasLayer" instance=ExtResource( 9 )]
+[connection signal="body_entered" from="Water/Area" to="Player" method="_on_water_entered"]
+[connection signal="body_exited" from="Water/Area" to="Player" method="_on_water_exited"]
+[connection signal="player_moved" from="Player" to="CanvasLayer/Interface" method="_on_Player_playerMoved"]

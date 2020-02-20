@@ -1,8 +1,6 @@
 extends RigidBody2D
 
-class_name BasicPacificFish
-
-export (Array, Texture) var textures
+class_name PassiveFish
 
 onready var sprite = $Sprite
 onready var change_trip_ticker = $ChangeTripTicker
@@ -11,7 +9,7 @@ var direction: Vector2
 
 export var min_impulse_multiplier = 50
 export var max_impulse_multiplier = 100
-var impulse_multiplier = 100
+var impulse_multiplier: float
 
 export var min_change_trip = 1
 export var max_change_trip = 5
@@ -19,7 +17,6 @@ export var max_change_trip = 5
 const drag_coefficient = 0.1
 
 func _ready():
-	sprite.texture = textures[randi() % textures.size()]
 	impulse_multiplier = rand_range(min_impulse_multiplier, max_impulse_multiplier)
 	
 	change_trip_ticker.connect("timeout", self, "_update_trip")

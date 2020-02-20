@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fish_iperoglife.png-24ea111da27e2dcb0ef2fdf62509f6ad.stex"
+path="res://.import/fish3.png-9bf9f5bf4720a91e8f7a0c91d8c6b5dc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/mobs/aggressive/assets/fish_iperoglife.png"
-dest_files=[ "res://.import/fish_iperoglife.png-24ea111da27e2dcb0ef2fdf62509f6ad.stex" ]
+source_file="res://scenes/mobs/assets/fish3.png"
+dest_files=[ "res://.import/fish3.png-9bf9f5bf4720a91e8f7a0c91d8c6b5dc.stex" ]
 
 [params]
 

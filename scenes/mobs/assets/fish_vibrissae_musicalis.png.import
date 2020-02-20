@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fish3.png-de1e975a29bd2b19afd73783f36d7d39.stex"
+path="res://.import/fish_vibrissae_musicalis.png-f53ff6233b28244445750f3330316a76.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/mobs/pacific/assets/fish3.png"
-dest_files=[ "res://.import/fish3.png-de1e975a29bd2b19afd73783f36d7d39.stex" ]
+source_file="res://scenes/mobs/assets/fish_vibrissae_musicalis.png"
+dest_files=[ "res://.import/fish_vibrissae_musicalis.png-f53ff6233b28244445750f3330316a76.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fish_vibrissae_musicalis.png-2558790b30092dff4e0f02f63ac92f8a.stex"
+path="res://.import/fish_oblungo_dementis.png-42360150740a058b45f51af7f068fbce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/mobs/pacific/assets/fish_vibrissae_musicalis.png"
-dest_files=[ "res://.import/fish_vibrissae_musicalis.png-2558790b30092dff4e0f02f63ac92f8a.stex" ]
+source_file="res://scenes/mobs/assets/fish_oblungo_dementis.png"
+dest_files=[ "res://.import/fish_oblungo_dementis.png-42360150740a058b45f51af7f068fbce.stex" ]
 
 [params]
 

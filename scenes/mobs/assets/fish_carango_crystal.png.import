@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fish1.png-dcb715d7f05f6a2ba7eeb01c43331017.stex"
+path="res://.import/fish_carango_crystal.png-430c8d584508a991743a64fe54f46fae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/mobs/pacific/assets/fish1.png"
-dest_files=[ "res://.import/fish1.png-dcb715d7f05f6a2ba7eeb01c43331017.stex" ]
+source_file="res://scenes/mobs/assets/fish_carango_crystal.png"
+dest_files=[ "res://.import/fish_carango_crystal.png-430c8d584508a991743a64fe54f46fae.stex" ]
 
 [params]
 

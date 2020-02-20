@@ -1,15 +1,18 @@
 extends Node
 
 var scenes = [
-	{
-		scene = preload("res://scenes/mobs/pacific/BasicPacificFish.tscn"),
-		weight = 8,
-	}
+	preload("res://scenes/mobs/Fish1.tscn"),
+	preload("res://scenes/mobs/Fish2.tscn"),
+	preload("res://scenes/mobs/Fish3.tscn"),
+	preload("res://scenes/mobs/Fish4.tscn"),
+	preload("res://scenes/mobs/FishCarango.tscn"),
+	preload("res://scenes/mobs/FishCarangoCrystal.tscn"),
+	preload("res://scenes/mobs/FishIperoglife.tscn"),
+	preload("res://scenes/mobs/FishMusicalis.tscn"),
+	preload("res://scenes/mobs/FishOblungo.tscn"),
 ]
 
 export var initial_spawn_amount: int
-
-var total_weight = 8
 
 func _ready():
 	randomize()
@@ -17,17 +20,8 @@ func _ready():
 	for i in initial_spawn_amount:
 		_spawn_random_fish(_generate_random_coords())
 	
-func _spawn_random_fish(at: Vector2):
-	var consume = randi() % total_weight
-	var scene_index = 0
-	
-	while true:
-		if consume < scenes[scene_index].weight:
-			break
-		else:
-			consume -= scenes[scene_index].weight
-	
-	var scene = scenes[scene_index].scene
+func _spawn_random_fish(at: Vector2):	
+	var scene = scenes[randi() % scenes.size()]
 	var instance = scene.instance()
 	instance.position = at
 	add_child(instance)

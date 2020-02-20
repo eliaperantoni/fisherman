@@ -10,12 +10,12 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "RigidBody2D",
-"class": "BasicPacificFish",
+"class": "PassiveFish",
 "language": "GDScript",
-"path": "res://scenes/mobs/pacific/basic_pacific_fish_controller.gd"
+"path": "res://scenes/mobs/fish_passive_controller.gd"
 } ]
 _global_script_class_icons={
-"BasicPacificFish": ""
+"PassiveFish": ""
 }
 
 [application]

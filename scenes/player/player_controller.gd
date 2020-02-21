@@ -7,10 +7,14 @@ export var life = 100
 export var oxygen_refill = 10
 export var oxygen_decrease = 4
 
+var toolbelt = ToolBelt.new(self)
 var can_swim = true
 
 signal player_moved
 signal oxygen_modified
+
+func _input(ev):
+	toolbelt.on_input(ev)
 
 func _physics_process(delta):
 	self.linear_velocity *= (1 - drag_coefficient)

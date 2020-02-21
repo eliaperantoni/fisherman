@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/main/assets/water.png" type="Texture" id=1]
 [ext_resource path="res://scenes/main/assets/cloud01.png" type="Texture" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://scenes/main/spawner.gd" type="Script" id=8]
 [ext_resource path="res://scenes/interface/Interface.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/main/assets/surface.material" type="Material" id=10]
-[ext_resource path="res://scenes/tools/Cursor.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/main/main_settings.gd" type="Script" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -119,10 +118,6 @@ __meta__ = {
 "_edit_lock_": true,
 "_editor_description_": ""
 }
-
-[node name="Cursor" parent="." instance=ExtResource( 11 )]
-light_mask = 0
-position = Vector2( -47.8032, -33.2958 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

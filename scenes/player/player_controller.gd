@@ -11,6 +11,9 @@ var can_swim = true
 
 signal player_moved
 signal oxygen_modified
+signal life_modified
+signal oxygen_end
+signal life_end
 
 func _physics_process(delta):
 	self.linear_velocity *= (1 - drag_coefficient)
@@ -35,16 +38,12 @@ func _physics_process(delta):
 	if not can_swim:
 		direction.y = 0
 		
-	self.apply_central_impulse(direction * delta * impulse_multiplier * (10 if Input.is_key_pressed(KEY_SHIFT) else 1))
-	
-	if direction != Vector2(0,0) or not can_swim:
-		emit_signal("player_moved", position)
-		
+	self.apply_central_impulse(direction * delta * impulse_multiplier * (10 if Input.is_key_pressed(KEY_SHIFT) else 1))	
 	if can_swim:
 		oxygen -= delta*oxygen_decrease;
 		_oxygen_modified(oxygen)
 	else:
-		oxygen += delta*oxygen_refill;
+		oxygen += delta*oxygen_refill
 		_oxygen_modified(oxygen)
 
 func _oxygen_modified(value):
@@ -53,9 +52,10 @@ func _oxygen_modified(value):
 		value=100
 	if value<0:
 		value=0
+		emit_signal("oxygen_end")
 	oxygen = value
 	emit_signal("oxygen_modified", int(oxygen))
-
+	
 func _on_water_entered(body):
 	if body == self:
 		can_swim = true
@@ -65,3 +65,11 @@ func _on_water_exited(body):
 	if body == self:
 		can_swim = false
 		self.gravity_scale = 10
+
+
+func _life_decrease(poit_decrease):
+	life -=poit_decrease
+	if(life<=0):
+		life = 0
+		emit_signal("life_end")
+	emit_signal("life_modified",life)

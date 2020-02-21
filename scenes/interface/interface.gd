@@ -14,14 +14,15 @@ func _set_life(value):
 	$Life/Label.text = "HB %s/100" % value
 
 func _set_deep(value):
-	$DeepCounter.text = "DEEP - %s m" % value	
+	$DeepCounter.text = "DEEP - %s m" % value
 
-func _on_Player_playerMoved(position):
+func _on_Player_oxygen_modified(value):
+	_set_oxygen(value)
+
+
+func _on_Player_player_moved(position):
 	var value = position.y/5
-	if(value<0):
+	if value<0:
 		value=0
 	value = int(value)
 	_set_deep(value)
-
-func _on_Player_oxygenModified(value):
-	_set_oxygen(value);

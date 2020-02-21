@@ -124,4 +124,5 @@ margin_left = 0.0
 margin_bottom = 0.0
 [connection signal="body_entered" from="Water/Area" to="Player" method="_on_water_entered"]
 [connection signal="body_exited" from="Water/Area" to="Player" method="_on_water_exited"]
-[connection signal="oxygenModified" from="Player" to="CanvasLayer/Interface" method="_on_Player_oxygenModified"]
+[connection signal="oxygen_modified" from="Player" to="CanvasLayer/Interface" method="_on_Player_oxygen_modified"]
+[connection signal="player_moved" from="Player" to="CanvasLayer/Interface" method="_on_Player_player_moved"]

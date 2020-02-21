@@ -2,14 +2,14 @@ extends Node
 
 class_name ToolBelt
 
-var player
-func _init(player_arg):
-	player = player_arg
-
 var current_tool_i = 0 setget set_current_tool_i
 var tools = {
 	1: preload("res://scenes/tools/hand_tools/Flashlight.tscn").instance()
 }
+
+func _init(player):
+	for key in tools:
+		tools[key].player = player
 
 func set_current_tool_i(new_tool_i):
 	print("[TOOLBELT] Switching tool to %d" % new_tool_i)
@@ -20,7 +20,7 @@ func set_current_tool_i(new_tool_i):
 	current_tool_i = new_tool_i
 	
 	if new_tool_i in tools:
-		tools[current_tool_i].activate(player)
+		tools[current_tool_i].activate()
 
 func switch_tool_if_different(new_tool_i):
 	if new_tool_i != current_tool_i:

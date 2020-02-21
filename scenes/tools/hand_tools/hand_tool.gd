@@ -4,10 +4,11 @@ class_name HandTool
 
 var player
 
-func activate(player_arg):
-	player = player_arg
-	player.add_child(self)
+func get_hand():
+	return player.get_node("Hand")
+
+func activate():
+	get_hand().add_child(self)
 	
 func deactivate():
-	player.remove_child(self)
-	player = null
+	get_hand().remove_child(self)

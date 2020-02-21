@@ -6,7 +6,6 @@
 [ext_resource path="res://scenes/tools/hand_tools/hand_tool_cursor.gd" type="Script" id=4]
 
 [node name="Sprite" instance=ExtResource( 1 )]
-position = Vector2( 10, -5 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
 

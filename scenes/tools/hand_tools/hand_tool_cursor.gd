@@ -1,5 +1,7 @@
 extends HandTool
 
+class_name HandToolCursor
+
 var cursor_scene = preload("res://scenes/tools/cursor/Cursor.tscn")
 var cursor
 

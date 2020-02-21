@@ -2,9 +2,9 @@ extends Node2D
 
 class_name ToolBelt
 
-signal tool_changed(index)
+signal tool_changed(old_tool_i, new_tool_i)
 
-var current_tool_i = 0 setget set_current_tool_i
+var current_tool_i setget set_current_tool_i
 var tools = {
 	1: preload("res://scenes/tools/hand_tools/Flashlight.tscn").instance()
 }
@@ -13,9 +13,13 @@ func _ready():
 	var player = get_parent()
 	for key in tools:
 		tools[key].player = player
+		
+	self.current_tool_i = 0
 
 func set_current_tool_i(new_tool_i):
 	print("[TOOLBELT] Switching tool to %d" % new_tool_i)
+	
+	emit_signal("tool_changed", current_tool_i, new_tool_i)
 	
 	if current_tool_i in tools:
 		tools[current_tool_i].deactivate()

@@ -20,10 +20,6 @@ func _set_life(value):
 func _set_deep(value):
 	$DeepCounter.text = "DEEP - %s m" % value
 
-func _on_player_oxygen_modified(value):
-	_set_oxygen(value)
-
-
 func player_moved(position):
 	var value = position/5
 	if value<0:
@@ -34,3 +30,7 @@ func player_moved(position):
 
 func _on_Player_life_modified(life):
 	_set_life(life)
+
+
+func _on_Player_oxygen_modified(value):
+	_set_oxygen(value)

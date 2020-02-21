@@ -19,10 +19,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/mobs/fish_passive_controller.gd"
 }, {
-"base": "Node",
+"base": "Node2D",
 "class": "ToolBelt",
 "language": "GDScript",
-"path": "res://scenes/player/toolbelt.gd"
+"path": "res://scenes/tools/toolbelt.gd"
 } ]
 _global_script_class_icons={
 "HandTool": "",

@@ -1,19 +1,21 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/interface/assets/oxygen_bar.png" type="Texture" id=1]
 [ext_resource path="res://scenes/interface/assets/life_bar.png" type="Texture" id=2]
 [ext_resource path="res://scenes/interface/assets/background_bar.png" type="Texture" id=3]
 [ext_resource path="res://assets/themes/theme.tres" type="Theme" id=4]
 [ext_resource path="res://scenes/interface/interface.gd" type="Script" id=5]
+[ext_resource path="res://scenes/interface/ToolbeltDisplay.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.0
-margin_bottom = -600.0
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Life" type="HBoxContainer" parent="."]
 margin_left = 10.0
@@ -94,3 +96,7 @@ texture_progress = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Toolbelt" parent="." instance=ExtResource( 6 )]
+margin_top = -84.0
+margin_bottom = -20.0

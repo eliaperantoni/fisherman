@@ -2,26 +2,37 @@
 
 [ext_resource path="res://assets/themes/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/fish_bar/FishBar.gd" type="Script" id=2]
-[ext_resource path="res://scenes/fish_bar/border_bar.png" type="Texture" id=3]
 
-[node name="Control" type="HBoxContainer"]
+[sub_resource type="StyleBoxTexture" id=1]
+
+[node name="Control" type="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -857.0
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_top = 284.0
-margin_right = 107.0
-margin_bottom = 315.0
+anchor_right = 0.902
+anchor_bottom = 0.052
+margin_right = 0.351929
+margin_bottom = -0.200001
 theme = ExtResource( 1 )
-text = "100/100"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="FishContainer" type="TextureRect" parent="."]
-margin_left = 111.0
-margin_right = 151.0
-margin_bottom = 600.0
-texture = ExtResource( 3 )
+[node name="VScrollBar" type="ScrollContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -254.228
+margin_bottom = 288.772
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VScrollBar"]

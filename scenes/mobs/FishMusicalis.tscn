@@ -4,6 +4,8 @@
 [ext_resource path="res://scenes/mobs/assets/fish_vibrissae_musicalis.png" type="Texture" id=2]
 
 [node name="RigidBody" instance=ExtResource( 1 )]
+color = Color( 0.470588, 0.117647, 0.803922, 1 )
+size = 5
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )

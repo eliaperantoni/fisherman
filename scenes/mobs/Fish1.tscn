@@ -1,14 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://scenes/mobs/FishPassive.tscn" type="PackedScene" id=1]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 5.97176
-height = 1.77736
-
 [node name="RigidBody" instance=ExtResource( 1 )]
-size = 11
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
-rotation = 1.39626
-shape = SubResource( 1 )
+color = Color( 1, 0.501961, 0, 1 )
+size = 5

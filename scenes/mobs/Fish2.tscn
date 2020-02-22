@@ -4,6 +4,7 @@
 [ext_resource path="res://scenes/mobs/assets/fish2.png" type="Texture" id=2]
 
 [node name="RigidBody" instance=ExtResource( 1 )]
+color = Color( 0.988235, 0.760784, 0.109804, 1 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )

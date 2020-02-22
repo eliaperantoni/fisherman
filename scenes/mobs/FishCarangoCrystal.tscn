@@ -5,6 +5,8 @@
 [ext_resource path="res://scenes/mobs/assets/fish_carango_crystal_emission.png" type="Texture" id=3]
 
 [node name="RigidBody" instance=ExtResource( 1 )]
+color = Color( 0.494118, 1, 1, 1 )
+size = 20
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )

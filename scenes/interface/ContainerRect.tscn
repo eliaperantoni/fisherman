@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/fish_bar/assets/block.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/default_font.tres" type="DynamicFont" id=2]
+
+[node name="Container" type="HBoxContainer"]
+anchor_right = 0.08
+anchor_bottom = 0.067
+margin_right = 0.0799942
+margin_bottom = -0.200001
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border" type="TextureRect" parent="."]
+margin_right = 30.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fish" type="TextureRect" parent="Border"]
+anchor_left = 0.07
+anchor_top = 0.185
+anchor_right = 0.931
+anchor_bottom = 0.798
+margin_left = -2.1
+margin_top = -7.808
+margin_right = 2.07
+margin_bottom = 8.484
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 34.0
+margin_top = 4.0
+margin_right = 82.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 2 )
+text = "123"
+__meta__ = {
+"_edit_use_anchors_": false
+}

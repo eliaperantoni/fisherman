@@ -9,16 +9,17 @@ signal tool_changed(old_tool_i, new_tool_i)
 
 var current_tool_i setget set_current_tool_i
 var tools = {
-	1: preload("res://scenes/tools/hand_tools/Flashlight.tscn").instance()
+	1: {
+		obj = preload("res://scenes/tools/hand_tools/Flashlight.tscn").instance(),
+		texture = preload("res://scenes/tools/hand_tools/assets/flashlight.png")
+	}
 }
 
 func _ready():
 	for key in tools:
-		tools[key].player = player
+		tools[key].obj.player = player
 		
 	self.current_tool_i = 0
-	
-	emit_signal("toolset_changed", tools)
 
 func set_current_tool_i(new_tool_i):
 	print("[TOOLBELT] Switching tool to %d" % new_tool_i)
@@ -26,12 +27,12 @@ func set_current_tool_i(new_tool_i):
 	emit_signal("tool_changed", current_tool_i, new_tool_i)
 	
 	if current_tool_i in tools:
-		tools[current_tool_i].deactivate()
+		tools[current_tool_i].obj.deactivate()
 	
 	current_tool_i = new_tool_i
 	
 	if new_tool_i in tools:
-		tools[current_tool_i].activate()
+		tools[current_tool_i].obj.activate()
 
 func switch_tool_if_different(new_tool_i):
 	if new_tool_i != current_tool_i:

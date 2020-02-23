@@ -77,15 +77,6 @@ rotation = -1.5708
 physics_material_override = null
 length = 1280
 
-[node name="SurfaceBack" type="Sprite" parent="."]
-material = ExtResource( 10 )
-texture = ExtResource( 4 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 2048, 32 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Fishes" type="Node2D" parent="."]
 script = ExtResource( 8 )
 __meta__ = {
@@ -100,6 +91,15 @@ mode = 1
 __meta__ = {
 "_edit_lock_": true,
 "_editor_description_": ""
+}
+
+[node name="SurfaceBack" type="Sprite" parent="."]
+material = ExtResource( 10 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2048, 32 )
+__meta__ = {
+"_edit_lock_": true
 }
 
 [node name="Player" parent="." instance=ExtResource( 7 )]

@@ -3,7 +3,7 @@ extends RigidBody2D
 export var drag_coefficient = 0.1
 export var impulse_multiplier = 50000
 
-export var oxygen = 100
+export var oxygen = 100 setget set_oxygen
 export var life = 100
 
 export var oxygen_refill_rate = 10
@@ -43,13 +43,12 @@ func _physics_process(delta):
 		emit_signal("player_moved", position)
 		
 	if can_swim:
-		oxygen -= delta*oxygen_decrease_rate
+		self.oxygen -= delta*oxygen_decrease_rate
 	else:
-		oxygen += delta*oxygen_refill_rate
-	_oxygen_modified(oxygen)
+		self.oxygen += delta*oxygen_refill_rate
 
-func _oxygen_modified(value):
-	oxygen = clamp(value, 0, 100)
+func set_oxygen(new_oxygen):
+	oxygen = clamp(new_oxygen, 0, 100)
 	emit_signal("oxygen_modified", oxygen)
 
 func _on_water_entered(body):

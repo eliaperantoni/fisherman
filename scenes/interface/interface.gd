@@ -6,19 +6,16 @@ func _ready():
 	_set_deep(0)
 
 func _set_oxygen(value):
-	$Oxygen/Bar.value = value
-	$Oxygen/Label.text = "O2 %s/100" % value
+	$OxygenBar.set_value(value)
 
 func _set_life(value):
-	$Life/Bar.value = value
-	$Life/Label.text = "HB %s/100" % value
+	$LifeBar.set_value(value)
 
 func _set_deep(value):
-	$DeepCounter.text = "DEEP - %s m" % value
+	$DeepCounter.set_depth(value)
 
 func _on_Player_oxygen_modified(value):
 	_set_oxygen(value)
-
 
 func _on_Player_player_moved(position):
 	var value = position.y/5

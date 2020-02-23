@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/interface/assets/background_bar.png" type="Texture" id=1]
+[ext_resource path="res://scenes/interface/assets/oxygen_bar.png" type="Texture" id=2]
+[ext_resource path="res://assets/themes/theme.tres" type="Theme" id=3]
+[ext_resource path="res://scenes/interface/bar.gd" type="Script" id=4]
+
+[node name="Bar" type="HBoxContainer"]
+margin_right = 370.0
+margin_bottom = 31.0
+alignment = 2
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="."]
+margin_right = 32.0
+margin_bottom = 31.0
+theme = ExtResource( 3 )
+text = "LB"
+align = 1
+valign = 1
+
+[node name="Value" type="Label" parent="."]
+margin_left = 36.0
+margin_right = 96.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 60, 0 )
+theme = ExtResource( 3 )
+text = "XXX"
+align = 2
+valign = 1
+
+[node name="Separator" type="Label" parent="."]
+margin_left = 100.0
+margin_right = 111.0
+margin_bottom = 31.0
+theme = ExtResource( 3 )
+text = "/"
+align = 1
+valign = 1
+
+[node name="MaxValue" type="Label" parent="."]
+margin_left = 115.0
+margin_right = 166.0
+margin_bottom = 31.0
+theme = ExtResource( 3 )
+text = "XXX"
+align = 1
+valign = 1
+
+[node name="Bar" type="TextureProgress" parent="."]
+margin_left = 170.0
+margin_right = 370.0
+margin_bottom = 31.0
+value = 100.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

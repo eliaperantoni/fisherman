@@ -12,7 +12,7 @@ export var oxygen_decrease_rate = 4
 var can_swim = true
 
 signal player_moved(position)
-signal oxygen_modified(value)
+signal oxygen_modified(oxyen_level)
 
 func _physics_process(delta):
 	self.linear_velocity *= (1 - drag_coefficient)

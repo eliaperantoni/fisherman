@@ -2,9 +2,9 @@ extends Node2D
 
 class_name ToolBelt
 
-export (NodePath) var player_path
-onready var player = get_node(player_path)
+onready var player = get_parent()
 
+signal toolset_changed(new_toolset)
 signal tool_changed(old_tool_i, new_tool_i)
 
 var current_tool_i setget set_current_tool_i
@@ -17,6 +17,8 @@ func _ready():
 		tools[key].player = player
 		
 	self.current_tool_i = 0
+	
+	emit_signal("toolset_changed", tools)
 
 func set_current_tool_i(new_tool_i):
 	print("[TOOLBELT] Switching tool to %d" % new_tool_i)

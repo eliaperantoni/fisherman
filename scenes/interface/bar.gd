@@ -1,5 +1,7 @@
 extends HBoxContainer
 
+class_name Bar
+
 onready var bar = $Bar
 onready var label = $Value
 

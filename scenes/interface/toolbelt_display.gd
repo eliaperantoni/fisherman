@@ -11,3 +11,6 @@ func on_tool_changed(old_tool_i, new_tool_i):
 		get_child(i).show_behind_parent = true
 		
 	get_child(new_tool_i).show_behind_parent = false
+	
+func on_toolset_changed(toolset):
+	print(toolset)

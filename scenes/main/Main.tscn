@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/main/assets/water.png" type="Texture" id=1]
 [ext_resource path="res://scenes/main/assets/cloud01.png" type="Texture" id=2]
@@ -10,8 +10,7 @@
 [ext_resource path="res://scenes/main/spawner.gd" type="Script" id=8]
 [ext_resource path="res://scenes/interface/Interface.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/main/assets/surface.material" type="Material" id=10]
-[ext_resource path="res://scenes/tools/Toolbelt.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/main/main_settings.gd" type="Script" id=12]
+[ext_resource path="res://scenes/main/main.gd" type="Script" id=12]
 [ext_resource path="res://scenes/mobs/Fish1.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/mobs/FishMusicalis.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/mobs/Fish4.tscn" type="PackedScene" id=15]
@@ -103,10 +102,6 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Toolbelt" parent="." instance=ExtResource( 11 )]
-position = Vector2( 0, 6 )
-player_path = NodePath("../Player")
-
 [node name="SurfaceBack" type="Sprite" parent="."]
 material = ExtResource( 10 )
 texture = ExtResource( 4 )
@@ -139,5 +134,3 @@ __meta__ = {
 [node name="Interface" parent="CanvasLayer" instance=ExtResource( 9 )]
 [connection signal="body_entered" from="Water/Area" to="Player" method="_on_water_entered"]
 [connection signal="body_exited" from="Water/Area" to="Player" method="_on_water_exited"]
-[connection signal="oxygen_modified" from="Player" to="CanvasLayer/Interface" method="_on_Player_oxygen_modified"]
-[connection signal="player_moved" from="Player" to="CanvasLayer/Interface" method="_on_Player_player_moved"]

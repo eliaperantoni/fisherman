@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "HBoxContainer",
+"class": "Bar",
+"language": "GDScript",
+"path": "res://scenes/interface/bar.gd"
+}, {
 "base": "Sprite",
 "class": "HandTool",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://scenes/tools/toolbelt.gd"
 } ]
 _global_script_class_icons={
+"Bar": "",
 "HandTool": "",
 "HandToolCursor": "",
 "PassiveFish": "",

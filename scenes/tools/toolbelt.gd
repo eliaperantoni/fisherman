@@ -2,6 +2,9 @@ extends Node2D
 
 class_name ToolBelt
 
+export (NodePath) var player_path
+onready var player = get_node(player_path)
+
 signal tool_changed(old_tool_i, new_tool_i)
 
 var current_tool_i setget set_current_tool_i
@@ -10,7 +13,6 @@ var tools = {
 }
 
 func _ready():
-	var player = get_parent()
 	for key in tools:
 		tools[key].player = player
 		

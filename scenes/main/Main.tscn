@@ -93,6 +93,10 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Toolbelt" parent="." instance=ExtResource( 11 )]
+position = Vector2( 0, 6 )
+player_path = NodePath("../Player")
+
 [node name="SurfaceBack" type="Sprite" parent="."]
 material = ExtResource( 10 )
 texture = ExtResource( 4 )
@@ -108,8 +112,6 @@ position = Vector2( 0, 6 )
 [node name="Camera" type="Camera2D" parent="Player"]
 current = true
 zoom = Vector2( 0.2, 0.2 )
-
-[node name="Toolbelt" parent="Player" instance=ExtResource( 11 )]
 
 [node name="SurfaceFront" type="Sprite" parent="."]
 material = ExtResource( 10 )

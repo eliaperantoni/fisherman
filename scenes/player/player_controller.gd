@@ -6,13 +6,13 @@ export var impulse_multiplier = 50000
 export var oxygen = 100
 export var life = 100
 
-export var oxygen_refill = 10
-export var oxygen_decrease = 4
+export var oxygen_refill_rate = 10
+export var oxygen_decrease_rate = 4
 
 var can_swim = true
 
-signal player_moved
-signal oxygen_modified
+signal player_moved(position)
+signal oxygen_modified(value)
 
 func _physics_process(delta):
 	self.linear_velocity *= (1 - drag_coefficient)
@@ -43,20 +43,14 @@ func _physics_process(delta):
 		emit_signal("player_moved", position)
 		
 	if can_swim:
-		oxygen -= delta*oxygen_decrease;
-		_oxygen_modified(oxygen)
+		oxygen -= delta*oxygen_decrease_rate
 	else:
-		oxygen += delta*oxygen_refill;
-		_oxygen_modified(oxygen)
+		oxygen += delta*oxygen_refill_rate
+	_oxygen_modified(oxygen)
 
 func _oxygen_modified(value):
-	#Il valore inserito è già in percentuale
-	if value>100:
-		value=100
-	if value<0:
-		value=0
-	oxygen = value
-	emit_signal("oxygen_modified", int(oxygen))
+	oxygen = clamp(value, 0, 100)
+	emit_signal("oxygen_modified", oxygen)
 
 func _on_water_entered(body):
 	if body == self:

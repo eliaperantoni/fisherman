@@ -13,8 +13,8 @@ var impulse_multiplier: float
 
 export var min_change_trip = 1
 export var max_change_trip = 5
-
 const drag_coefficient = 0.1
+export var size = 10
 
 func _ready():
 	impulse_multiplier = rand_range(min_impulse_multiplier, max_impulse_multiplier)
@@ -46,3 +46,5 @@ func _update_trip(force_downward = false):
 	
 	var wait_time = rand_range(min_change_trip, max_change_trip)
 	change_trip_ticker.start(wait_time)
+func get_texture():
+	return $Sprite.texture

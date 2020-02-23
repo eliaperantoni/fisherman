@@ -24,6 +24,8 @@ func _spawn_random_fish(at: Vector2):
 	var scene = scenes[randi() % scenes.size()]
 	var instance = scene.instance()
 	instance.position = at
+	
+	self.get_parent().get_node("CanvasLayer/Interface/FishBar").addFish(instance)
 	add_child(instance)
 	
 func _generate_random_coords() -> Vector2:

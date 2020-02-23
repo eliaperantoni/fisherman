@@ -2,8 +2,10 @@ extends RigidBody2D
 
 export var drag_coefficient = 0.1
 export var impulse_multiplier = 50000
+
 export var oxygen = 100
 export var life = 100
+
 export var oxygen_refill = 10
 export var oxygen_decrease = 4
 

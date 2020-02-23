@@ -1,16 +1,6 @@
 extends Node
 
-var scenes = [
-	preload("res://scenes/mobs/Fish1.tscn"),
-	preload("res://scenes/mobs/Fish2.tscn"),
-	preload("res://scenes/mobs/Fish3.tscn"),
-	preload("res://scenes/mobs/Fish4.tscn"),
-	preload("res://scenes/mobs/FishCarango.tscn"),
-	preload("res://scenes/mobs/FishCarangoCrystal.tscn"),
-	preload("res://scenes/mobs/FishIperoglife.tscn"),
-	preload("res://scenes/mobs/FishMusicalis.tscn"),
-	preload("res://scenes/mobs/FishOblungo.tscn"),
-]
+export (Array, PackedScene) var scenes
 
 export var initial_spawn_amount: int
 

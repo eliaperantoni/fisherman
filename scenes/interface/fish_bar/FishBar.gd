@@ -27,3 +27,9 @@ func addFish(fish):
 		$VScrollBar/VBoxContainer.add_child(rect)
 	$Label.text =  "%s/%s" % [fill,self.max_value]
 	return true;
+
+func addFishes(fishes):
+	for fish in fishes:
+		if(not addFish(fish)):
+			return false
+	return true

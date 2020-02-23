@@ -14,7 +14,6 @@ var impulse_multiplier: float
 export var min_change_trip = 1
 export var max_change_trip = 5
 const drag_coefficient = 0.1
-export var color = Color(255,128,0)
 export var size = 10
 
 func _ready():

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background_bar.png-4d5da14704ae9a7502f31ae82e94787b.stex"
+path="res://.import/fish_bar_border.png-43033ff26d8419317bfc7468b729483a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/interface/assets/background_bar.png"
-dest_files=[ "res://.import/background_bar.png-4d5da14704ae9a7502f31ae82e94787b.stex" ]
+source_file="res://scenes/interface/assets/fish_bar_border.png"
+dest_files=[ "res://.import/fish_bar_border.png-43033ff26d8419317bfc7468b729483a.stex" ]
 
 [params]
 

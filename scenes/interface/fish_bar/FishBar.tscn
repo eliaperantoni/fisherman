@@ -1,9 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/themes/theme.tres" type="Theme" id=1]
-[ext_resource path="res://scenes/fish_bar/FishBar.gd" type="Script" id=2]
+[ext_resource path="res://scenes/interface/fish_bar/FishBar.gd" type="Script" id=2]
+[ext_resource path="res://scenes/interface/assets/fish_bar_border.png" type="Texture" id=3]
+
+
+
 
 [sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 40, 600 )
+draw_center = false
 
 [node name="Control" type="Panel"]
 anchor_right = 1.0
@@ -11,26 +18,27 @@ anchor_bottom = 1.0
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Label" type="Label" parent="."]
-anchor_right = 0.902
+anchor_right = 1.0
 anchor_bottom = 0.052
-margin_right = 0.351929
 margin_bottom = -0.200001
 theme = ExtResource( 1 )
+align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VScrollBar" type="ScrollContainer" parent="."]
-anchor_top = 0.5
+anchor_top = 0.076
 anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -254.228
-margin_bottom = 288.772
+anchor_bottom = 0.981
+margin_top = 0.172001
+margin_bottom = 0.171936
+scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }

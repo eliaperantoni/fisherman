@@ -3,5 +3,4 @@
 [ext_resource path="res://scenes/mobs/FishPassive.tscn" type="PackedScene" id=1]
 
 [node name="RigidBody" instance=ExtResource( 1 )]
-color = Color( 1, 0.501961, 0, 1 )
 size = 5

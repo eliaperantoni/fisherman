@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/interface/assets/background_bar.png" type="Texture" id=1]
+[ext_resource path="res://scenes/interface/assets/fill_bar_border.png" type="Texture" id=1]
 [ext_resource path="res://scenes/interface/assets/oxygen_bar.png" type="Texture" id=2]
 [ext_resource path="res://assets/themes/theme.tres" type="Theme" id=3]
 [ext_resource path="res://scenes/interface/bar.gd" type="Script" id=4]
+
 
 [node name="Bar" type="HBoxContainer"]
 margin_right = 370.0

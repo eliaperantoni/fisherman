@@ -3,16 +3,24 @@ extends RigidBody2D
 export var drag_coefficient = 0.1
 export var impulse_multiplier = 50000
 
-export var oxygen = 100 setget set_oxygen
-export var life = 100
-
 export var oxygen_refill_rate = 10
 export var oxygen_decrease_rate = 4
+
+export var oxygen = 100 setget set_oxygen
+func set_oxygen(new_oxygen):
+	oxygen = clamp(new_oxygen, 0, 100)
+	emit_signal("oxygen_modified", oxygen)
+
+export var life = 100 setget set_life
+func set_life(new_life):
+	life = clamp(new_life, 0, 100)
+	emit_signal("life_modified", life)
 
 var can_swim = true
 
 signal player_moved(position)
-signal oxygen_modified(oxyen_level)
+signal oxygen_modified(oxygen)
+signal life_modified(life)
 
 func _physics_process(delta):
 	self.linear_velocity *= (1 - drag_coefficient)
@@ -33,23 +41,17 @@ func _physics_process(delta):
 		direction += Vector2(0, -1)
 		
 	direction = direction.normalized()
-	
-	if not can_swim:
-		direction.y = 0
 		
-	self.apply_central_impulse(direction * delta * impulse_multiplier * (10 if Input.is_key_pressed(KEY_SHIFT) else 1))
+	var impulse = direction * delta * impulse_multiplier
+	if Input.is_key_pressed(KEY_SHIFT):
+		impulse *= 10
 	
-	if direction != Vector2(0,0) or not can_swim:
-		emit_signal("player_moved", position)
-		
+	self.apply_central_impulse(impulse)
+	
 	if can_swim:
 		self.oxygen -= delta*oxygen_decrease_rate
 	else:
 		self.oxygen += delta*oxygen_refill_rate
-
-func set_oxygen(new_oxygen):
-	oxygen = clamp(new_oxygen, 0, 100)
-	emit_signal("oxygen_modified", oxygen)
 
 func _on_water_entered(body):
 	if body == self:
@@ -60,3 +62,10 @@ func _on_water_exited(body):
 	if body == self:
 		can_swim = false
 		self.gravity_scale = 10
+
+
+func damage(points):
+	self.life -= points
+	
+func get_y():
+	return position.y

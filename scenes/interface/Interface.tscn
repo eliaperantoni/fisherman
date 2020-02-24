@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/interface/LifeBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interface/OxygenBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/interface/DeepCounter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/interface/ToolbeltDisplay.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/interface/fish_bar/FishBar.tscn" type="PackedScene" id=7]
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
@@ -34,3 +35,11 @@ margin_right = -10.0
 [node name="Toolbelt" parent="." instance=ExtResource( 6 )]
 margin_top = -84.0
 margin_bottom = -20.0
+
+[node name="FishBar" parent="." instance=ExtResource( 7 )]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -110.0
+margin_top = -300.0
+margin_bottom = 300.0

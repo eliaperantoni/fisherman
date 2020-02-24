@@ -1,4 +1,4 @@
 extends Bar
 
-func on_life_changed(old_life, new_life):
-	self.value = int(new_life)
+func on_life_changed(life):
+	self.value = int(life)

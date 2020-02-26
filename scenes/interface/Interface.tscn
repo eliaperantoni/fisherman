@@ -7,10 +7,6 @@
 [ext_resource path="res://scenes/interface/interface.gd" type="Script" id=5]
 [ext_resource path="res://scenes/interface/fish_bar/FishBar.tscn" type="PackedScene" id=6]
 
-
-
-
-
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="Interface" type="Control"]
@@ -38,7 +34,7 @@ margin_right = 152.0
 margin_bottom = 31.0
 theme = ExtResource( 4 )
 custom_styles/normal = SubResource( 1 )
-text = "HB 100/100"
+text = "HP 100/100"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -64,7 +60,7 @@ margin_right = 84.5
 margin_bottom = 31.0
 theme = ExtResource( 4 )
 custom_styles/normal = SubResource( 1 )
-text = "DEEP - 1453 "
+text = "DEPTH: 1453m "
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

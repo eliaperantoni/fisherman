@@ -21,10 +21,10 @@
 [ext_resource path="res://scenes/mobs/FishCarango.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/mobs/FishOblungo.tscn" type="PackedScene" id=21]
 
-[sub_resource type="PhysicsMaterial" id=4]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
 
-[sub_resource type="PhysicsMaterial" id=5]
+[sub_resource type="PhysicsMaterial" id=2]
 friction = 0.0
 
 [node name="Node2D" type="Node2D"]
@@ -59,13 +59,13 @@ __meta__ = {
 
 [node name="Left" parent="Borders" instance=ExtResource( 6 )]
 position = Vector2( -625, -400 )
-physics_material_override = SubResource( 4 )
+physics_material_override = SubResource( 1 )
 length = 3600
 
 [node name="Right" parent="Borders" instance=ExtResource( 6 )]
 position = Vector2( 625, -400 )
 rotation = 3.14159
-physics_material_override = SubResource( 5 )
+physics_material_override = SubResource( 2 )
 length = 3600
 
 [node name="Bottom" parent="Borders" instance=ExtResource( 6 )]
@@ -106,6 +106,16 @@ position = Vector2( 0, 6 )
 [node name="Camera" type="Camera2D" parent="Player"]
 current = true
 zoom = Vector2( 0.2, 0.2 )
+
+[node name="SurfaceFront" type="Sprite" parent="."]
+material = ExtResource( 10 )
+position = Vector2( 0, 2 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 1, 0, 2048, 32 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

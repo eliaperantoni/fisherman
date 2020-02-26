@@ -48,6 +48,10 @@ config/name="Fisherman"
 run/main_scene="res://scenes/main/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://globals/Global.gd"
+
 [input]
 
 ui_left={

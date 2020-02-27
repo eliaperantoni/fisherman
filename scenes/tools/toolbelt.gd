@@ -2,9 +2,9 @@ extends Node2D
 
 class_name ToolBelt
 
-onready var player = get_parent()
+var player
+var backpack
 
-signal toolset_changed(new_toolset)
 signal tool_changed(old_tool_i, new_tool_i)
 
 var current_tool_i setget set_current_tool_i
@@ -12,13 +12,16 @@ var tools = {
 	1: {
 		obj = preload("res://scenes/tools/hand_tools/Flashlight.tscn").instance(),
 		texture = preload("res://scenes/tools/hand_tools/assets/flashlight.png")
+	},
+	2: {
+		obj = preload("res://scenes/tools/hand_tools/Net.tscn").instance(),
+		texture = preload("res://assets/placeholder.png")
 	}
 }
 
 func _ready():
 	for key in tools:
-		tools[key].obj.player = player
-		
+		tools[key].obj.toolbelt = self
 	self.current_tool_i = 0
 
 func set_current_tool_i(new_tool_i):

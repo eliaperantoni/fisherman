@@ -1,20 +1,42 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/placeholder.png" type="Texture" id=1]
+[ext_resource path="res://scenes/tools/hand_tools/assets/net.png" type="Texture" id=1]
 [ext_resource path="res://scenes/tools/hand_tools/net.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 17.4061
-height = 24.7262
+[sub_resource type="Animation" id=2]
+resource_name = "sweep"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.210335, -14, -91, -0.0806286, 46, 0.126201, -64.5, -360, -0.246298, 0.500031, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.269931, 1 )
+}
 
-[node name="Sprite" type="Sprite"]
-texture = ExtResource( 1 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 10.9075
+height = 3.69728
+
+[node name="Net" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/sweep = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.0257416, -0.0365257 )
+rotation = -6.28319
+texture = ExtResource( 1 )
+offset = Vector2( 13.0147, 6.03216 )
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 14.5394, 0 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+position = Vector2( 19.0895, 5.05876 )
+rotation = 1.5708
 shape = SubResource( 1 )

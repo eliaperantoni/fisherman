@@ -1,11 +1,13 @@
 extends HandToolCursor
 
-onready var area = $Area2D
+onready var area = $Sprite/Area2D
+onready var animator = $AnimationPlayer
 
 var in_cooldown = false
 
 func _input(_event):
 	if Input.is_action_just_pressed("tool_action_a") and not in_cooldown:
+		animator.play("sweep")
 		var closest_fish = get_closest_fish()
 		# No fish
 		if not closest_fish:

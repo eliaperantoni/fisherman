@@ -16,7 +16,6 @@ func on_fish_added(fish, fill):
 	else:
 		# CREO L'OGGETTO CONTAINER SE NON E' PRESENTE
 		var rect = container_fish.instance()
-		rect.get_node("Label").text = "1"
 		rect.get_node("Border/Fish").texture = fish.get_texture()
 		dict_counter[fish.get_texture()] = 1
 		dict_child[fish.get_texture()] = rect

@@ -30,14 +30,14 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-anchor_left = 0.002
-anchor_top = 0.203
-anchor_right = 1.001
-anchor_bottom = 0.69
-margin_left = -0.0480001
-margin_top = -47.8
-margin_right = -5.02405
-margin_bottom = 95.0
+anchor_left = 0.003
+anchor_top = 0.261
+anchor_right = 0.997
+anchor_bottom = 0.739
+margin_left = -0.072
+margin_top = -0.100006
+margin_right = 0.0719604
+margin_bottom = 0.0999756
 texture = ExtResource( 5 )
 expand = true
 __meta__ = {
@@ -46,21 +46,21 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
 material = SubResource( 2 )
-anchor_left = 0.022
-anchor_top = 0.053
-anchor_right = 0.969
-anchor_bottom = 0.954
-margin_left = -0.360003
-margin_top = -0.0100021
-margin_right = -0.359985
-margin_bottom = 0.00997925
+anchor_left = 0.02
+anchor_top = 0.07
+anchor_right = 0.98
+anchor_bottom = 1.328
+margin_left = -0.360001
+margin_top = -0.0900002
+margin_right = 0.359985
+margin_bottom = -114.136
 custom_constants/separation = 30
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="TextureRect/VBoxContainer"]
-margin_right = 964.0
+margin_right = 978.0
 margin_bottom = 31.0
 custom_fonts/font = ExtResource( 1 )
 text = "Species"
@@ -71,55 +71,50 @@ __meta__ = {
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TextureRect/VBoxContainer"]
 margin_top = 61.0
-margin_right = 964.0
+margin_right = 978.0
 margin_bottom = 361.0
 rect_min_size = Vector2( 0, 300 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/VBoxContainer/ScrollContainer"]
-margin_right = 760.0
+[node name="GridContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer/ScrollContainer"]
+margin_right = 800.0
 margin_bottom = 163.0
+custom_constants/separation = 40
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_right = 760.0
-margin_bottom = 163.0
-custom_constants/separation = 30
-alignment = 1
-
-[node name="ContainerWanted" parent="TextureRect/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+[node name="ContainerWanted" parent="TextureRect/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 128.0
 margin_bottom = 163.0
 
-[node name="ContainerWanted2" parent="TextureRect/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+[node name="ContainerWanted3" parent="TextureRect/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 158.0
-margin_right = 286.0
+margin_left = 168.0
+margin_right = 296.0
 margin_bottom = 163.0
 
-[node name="ContainerWanted3" parent="TextureRect/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+[node name="ContainerWanted4" parent="TextureRect/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 316.0
-margin_right = 444.0
+margin_left = 336.0
+margin_right = 464.0
 margin_bottom = 163.0
 
-[node name="ContainerWanted4" parent="TextureRect/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+[node name="ContainerWanted2" parent="TextureRect/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 474.0
-margin_right = 602.0
+margin_left = 504.0
+margin_right = 632.0
 margin_bottom = 163.0
 
-[node name="ContainerWanted5" parent="TextureRect/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+[node name="ContainerWanted5" parent="TextureRect/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 632.0
-margin_right = 760.0
+margin_left = 672.0
+margin_right = 800.0
 margin_bottom = 163.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

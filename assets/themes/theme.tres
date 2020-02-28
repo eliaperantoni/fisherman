@@ -3,6 +3,7 @@
 [ext_resource path="res://assets/fonts/default_font.tres" type="DynamicFont" id=1]
 
 [resource]
+"Button/icons/Button menu" = null
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
 Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )

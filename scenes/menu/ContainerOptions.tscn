@@ -1,0 +1,121 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/default_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/interface/ToolbeltDisplay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/menu/edit.png" type="Texture" id=3]
+[ext_resource path="res://scenes/menu/screenshot.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxTexture" id=1]
+
+[node name="ContainerOptions" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -388.918, -125.306 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.062
+margin_bottom = -0.200001
+custom_fonts/font = ExtResource( 1 )
+text = "SHOP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 0.221
+anchor_right = 1.0
+anchor_bottom = 0.822
+margin_top = -0.100006
+margin_bottom = -25.7
+custom_constants/separation = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 1 )
+text = "Species"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+margin_top = 61.0
+margin_right = 1024.0
+margin_bottom = 361.0
+rect_min_size = Vector2( 0, 300 )
+scroll_horizontal = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+margin_right = 694.0
+margin_bottom = 223.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_right = 694.0
+margin_bottom = 223.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_right = 151.0
+margin_bottom = 223.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 181.0
+margin_right = 332.0
+margin_bottom = 223.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 362.0
+margin_right = 513.0
+margin_bottom = 223.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 543.0
+margin_right = 694.0
+margin_bottom = 223.0
+texture = ExtResource( 4 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_top = 0.931
+anchor_right = 1.0
+anchor_bottom = 0.931
+margin_top = -41.6
+margin_bottom = 41.4
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Row" parent="HBoxContainer" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 313.0
+margin_top = 0.0
+margin_right = 617.0
+margin_bottom = 83.0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_left = 647.0
+margin_right = 711.0
+margin_bottom = 83.0
+rect_min_size = Vector2( 64, 64 )
+icon = ExtResource( 3 )
+expand_icon = true

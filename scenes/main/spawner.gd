@@ -19,5 +19,5 @@ func _spawn_random_fish(at: Vector2):
 	
 func _generate_random_coords() -> Vector2:
 	var x = rand_range(-600, 600)
-	var y = rand_range(10, 3000)
+	var y = rand_range(10, 2700)
 	return Vector2(x, y)

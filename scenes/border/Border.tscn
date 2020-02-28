@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/border/assets/border.png" type="Texture" id=1]
-[ext_resource path="res://scenes/border/set_border_length.gd" type="Script" id=2]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -10,7 +9,6 @@ friction = 0.0
 
 [node name="StaticBody2D" type="StaticBody2D"]
 physics_material_override = SubResource( 1 )
-script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -20,4 +18,4 @@ shape = SubResource( 2 )
 position = Vector2( -16, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 32, 32 )
+region_rect = Rect2( 0, 0, 32, 3600 )

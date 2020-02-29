@@ -4,10 +4,10 @@
 [ext_resource path="res://assets/fonts/default_font.tres" type="DynamicFont" id=2]
 
 [node name="ContainerWanted" type="VBoxContainer"]
-anchor_right = 0.062
-anchor_bottom = 0.107
-margin_right = 0.511997
-margin_bottom = -0.200005
+anchor_right = 0.125
+anchor_bottom = 0.272
+margin_right = -64.0
+margin_bottom = -99.2
 __meta__ = {
 "_edit_use_anchors_": false
 }

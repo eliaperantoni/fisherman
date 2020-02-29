@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/default_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scenes/interface/ToolbeltDisplay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/menu/edit.png" type="Texture" id=3]
 [ext_resource path="res://scenes/menu/ContainerWanted.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/menu/wwqwqw.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -29,7 +28,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Center" type="Panel" parent="."]
 anchor_left = 0.003
 anchor_top = 0.261
 anchor_right = 0.997
@@ -38,13 +37,8 @@ margin_left = -0.072
 margin_top = -0.100006
 margin_right = 0.0719604
 margin_bottom = 0.0999756
-texture = ExtResource( 5 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Center"]
 material = SubResource( 2 )
 anchor_left = 0.02
 anchor_top = 0.07
@@ -59,8 +53,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="TextureRect/VBoxContainer"]
-margin_right = 978.0
+[node name="Label" type="Label" parent="Center/VBoxContainer"]
+margin_right = 977.0
 margin_bottom = 31.0
 custom_fonts/font = ExtResource( 1 )
 text = "Species"
@@ -69,70 +63,110 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TextureRect/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Center/VBoxContainer"]
 margin_top = 61.0
-margin_right = 978.0
+margin_right = 977.0
 margin_bottom = 361.0
 rect_min_size = Vector2( 0, 300 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer/ScrollContainer"]
-margin_right = 800.0
+[node name="GridContainer" type="HBoxContainer" parent="Center/VBoxContainer/ScrollContainer"]
+margin_right = 1640.0
 margin_bottom = 163.0
 custom_constants/separation = 40
 
-[node name="ContainerWanted" parent="TextureRect/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
+[node name="ContainerWanted" parent="Center/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 128.0
 margin_bottom = 163.0
 
-[node name="ContainerWanted3" parent="TextureRect/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
+[node name="ContainerWanted6" parent="Center/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 168.0
 margin_right = 296.0
 margin_bottom = 163.0
 
-[node name="ContainerWanted4" parent="TextureRect/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
+[node name="ContainerWanted7" parent="Center/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 336.0
 margin_right = 464.0
 margin_bottom = 163.0
 
-[node name="ContainerWanted2" parent="TextureRect/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
+[node name="ContainerWanted8" parent="Center/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 504.0
 margin_right = 632.0
 margin_bottom = 163.0
 
-[node name="ContainerWanted5" parent="TextureRect/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
+[node name="ContainerWanted9" parent="Center/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 672.0
 margin_right = 800.0
 margin_bottom = 163.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="ContainerWanted10" parent="Center/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 840.0
+margin_right = 968.0
+margin_bottom = 163.0
+
+[node name="ContainerWanted3" parent="Center/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1008.0
+margin_right = 1136.0
+margin_bottom = 163.0
+
+[node name="ContainerWanted4" parent="Center/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1176.0
+margin_right = 1304.0
+margin_bottom = 163.0
+
+[node name="ContainerWanted2" parent="Center/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1344.0
+margin_right = 1472.0
+margin_bottom = 163.0
+
+[node name="ContainerWanted5" parent="Center/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1512.0
+margin_right = 1640.0
+margin_bottom = 163.0
+
+[node name="Bottom" type="Panel" parent="."]
+anchor_top = 0.895
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom"]
 anchor_left = 0.5
-anchor_top = 0.893
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.893
+anchor_bottom = 0.5
 margin_left = -199.0
-margin_top = 0.199951
+margin_top = -32.0
 margin_right = 199.0
-margin_bottom = 64.2
+margin_bottom = 32.0
 custom_constants/separation = 30
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Row" parent="HBoxContainer" instance=ExtResource( 2 )]
+[node name="Row" parent="Bottom/HBoxContainer" instance=ExtResource( 2 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -142,7 +176,7 @@ margin_top = 0.0
 margin_right = 304.0
 margin_bottom = 64.0
 
-[node name="Button" type="Button" parent="HBoxContainer"]
+[node name="Button" type="Button" parent="Bottom/HBoxContainer"]
 margin_left = 334.0
 margin_right = 398.0
 margin_bottom = 64.0

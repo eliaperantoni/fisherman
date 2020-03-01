@@ -37,6 +37,9 @@ margin_left = -0.072
 margin_top = -0.100006
 margin_right = 0.0719604
 margin_bottom = 0.0999756
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Center"]
 material = SubResource( 2 )
@@ -147,18 +150,19 @@ margin_right = 1640.0
 margin_bottom = 163.0
 
 [node name="Bottom" type="Panel" parent="."]
-anchor_top = 0.895
+anchor_top = 0.822
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -0.200012
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Bottom"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -199.0
+margin_left = -512.0
 margin_top = -32.0
-margin_right = 199.0
+margin_right = 512.0
 margin_bottom = 32.0
 custom_constants/separation = 30
 alignment = 1
@@ -171,14 +175,14 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 0.0
+margin_left = 313.0
 margin_top = 0.0
-margin_right = 304.0
+margin_right = 617.0
 margin_bottom = 64.0
 
 [node name="Button" type="Button" parent="Bottom/HBoxContainer"]
-margin_left = 334.0
-margin_right = 398.0
+margin_left = 647.0
+margin_right = 711.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 icon = ExtResource( 3 )

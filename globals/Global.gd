@@ -3,7 +3,12 @@ extends Node
 
 var money = 0
 var current_scene: Node = null
-
+var tools = {
+	1: {
+		obj = preload("res://scenes/tools/hand_tools/Flashlight.tscn").instance(),
+		texture = preload("res://scenes/tools/hand_tools/assets/flashlight.png")
+	}
+}
 
 func _ready(): 
 	# get the root node

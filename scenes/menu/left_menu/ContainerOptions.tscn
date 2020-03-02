@@ -1,0 +1,123 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/fonts/default_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/interface/ToolbeltDisplay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/menu/assets/edit.png" type="Texture" id=3]
+[ext_resource path="res://scenes/menu/left_menu/ContainerOptions.gd" type="Script" id=5]
+
+
+[sub_resource type="StyleBoxTexture" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+[node name="ContainerOptions" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -388.918, -125.306 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.062
+margin_bottom = -0.200001
+custom_fonts/font = ExtResource( 1 )
+text = "SHOP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center" type="Panel" parent="."]
+anchor_left = 0.003
+anchor_top = 0.261
+anchor_right = 0.997
+anchor_bottom = 0.739
+margin_left = -0.072
+margin_top = -0.100006
+margin_right = 0.0719604
+margin_bottom = 0.0999756
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center"]
+material = SubResource( 2 )
+anchor_left = 0.02
+anchor_top = 0.07
+anchor_right = 0.98
+anchor_bottom = 1.328
+margin_left = -0.360001
+margin_top = -0.0900002
+margin_right = 0.359985
+margin_bottom = -114.136
+custom_constants/separation = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Center/VBoxContainer"]
+margin_right = 977.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 1 )
+text = "Species"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Center/VBoxContainer"]
+margin_top = 61.0
+margin_right = 977.0
+margin_bottom = 361.0
+rect_min_size = Vector2( 0, 300 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="HBoxContainer" parent="Center/VBoxContainer/ScrollContainer"]
+custom_constants/separation = 40
+
+[node name="Bottom" type="Panel" parent="."]
+anchor_top = 0.822
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.200012
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -32.0
+margin_right = 512.0
+margin_bottom = 32.0
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Toolbet" parent="Bottom/HBoxContainer" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 313.0
+margin_top = 0.0
+margin_right = 617.0
+margin_bottom = 64.0
+
+[node name="Button" type="Button" parent="Bottom/HBoxContainer"]
+margin_left = 647.0
+margin_right = 711.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+icon = ExtResource( 3 )
+expand_icon = true

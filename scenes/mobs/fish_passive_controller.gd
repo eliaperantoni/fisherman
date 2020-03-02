@@ -29,8 +29,7 @@ func _physics_process(delta):
 		change_trip_ticker.stop()
 		_update_trip(true)
 	
-	apply_central_impulse(direction * impulse_multiplier * delta)
-	
+	apply_central_impulse(direction * impulse_multiplier * delta)	
 func _update_trip(force_downward = false):
 	var max_radius
 	if force_downward:

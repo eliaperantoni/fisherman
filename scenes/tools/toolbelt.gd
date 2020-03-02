@@ -8,12 +8,14 @@ signal toolset_changed(new_toolset)
 signal tool_changed(old_tool_i, new_tool_i)
 
 var current_tool_i setget set_current_tool_i
-var tools = {
-	1: {
-		obj = preload("res://scenes/tools/hand_tools/Flashlight.tscn").instance(),
-		texture = preload("res://scenes/tools/hand_tools/assets/flashlight.png")
-	}
-}
+#var tools = {
+#	1: {
+#		obj = preload("res://scenes/tools/hand_tools/Flashlight.tscn").instance(),
+#		texture = preload("res://scenes/tools/hand_tools/assets/flashlight.png")
+#	}
+#}
+var tools = Global.tools
+
 
 func _ready():
 	for key in tools:

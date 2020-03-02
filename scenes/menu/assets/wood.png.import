@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/menu_window_background.png-4cf859cf404eefd30eac967c68234816.stex"
+path="res://.import/wood.png-a5489353df80989c2a111ad1db9abb5e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/menu/menu_window_background.png"
-dest_files=[ "res://.import/menu_window_background.png-4cf859cf404eefd30eac967c68234816.stex" ]
+source_file="res://scenes/menu/assets/wood.png"
+dest_files=[ "res://.import/wood.png-a5489353df80989c2a111ad1db9abb5e.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

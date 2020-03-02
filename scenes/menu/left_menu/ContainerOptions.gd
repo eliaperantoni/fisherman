@@ -2,8 +2,7 @@ extends Panel
 
 onready var toolbelt_display = $Bottom/HBoxContainer/Toolbet
 onready var container_wanted = $Center/VBoxContainer/ScrollContainer/GridContainer
-var rect_wanted = preload("res://scenes/menu/ContainerWanted.tscn")
-
+var rect_wanted = preload("res://scenes/menu/left_menu/ContainerWanted.tscn")
 func _ready():
 	toolbelt_display.on_toolset_changed(Global.tools)
 

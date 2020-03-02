@@ -2,8 +2,9 @@
 
 [ext_resource path="res://assets/fonts/default_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scenes/interface/ToolbeltDisplay.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/menu/edit.png" type="Texture" id=3]
-[ext_resource path="res://scenes/menu/ContainerOptions.gd" type="Script" id=5]
+[ext_resource path="res://scenes/menu/assets/edit.png" type="Texture" id=3]
+[ext_resource path="res://scenes/menu/left_menu/ContainerOptions.gd" type="Script" id=5]
+
 
 [sub_resource type="StyleBoxTexture" id=1]
 

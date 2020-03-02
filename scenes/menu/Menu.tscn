@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/menu/background.png" type="Texture" id=1]
-[ext_resource path="res://scenes/menu/RightMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/menu/LeftMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/menu/assets/background.png" type="Texture" id=1]
+[ext_resource path="res://scenes/menu/right_menu/RightMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/menu/left_menu/LeftMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/themes/theme.tres" type="Theme" id=4]
 [ext_resource path="res://scenes/menu/Menu.gd" type="Script" id=5]
 

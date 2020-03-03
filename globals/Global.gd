@@ -7,6 +7,10 @@ var tools = {
 	1: {
 		obj = preload("res://scenes/tools/hand_tools/Flashlight.tscn").instance(),
 		texture = preload("res://scenes/tools/hand_tools/assets/flashlight.png")
+	},
+	2:{
+		obj = preload("res://scenes/tools/hand_tools/Net.tscn").instance(),
+		texture = preload("res://scenes/tools/hand_tools/assets/net.png")
 	}
 }
 

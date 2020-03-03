@@ -11,6 +11,8 @@ export var min_impulse_multiplier = 50
 export var max_impulse_multiplier = 100
 var impulse_multiplier: float
 
+export (Curve) var spawn_curve: Curve
+
 export var min_change_trip = 1
 export var max_change_trip = 5
 const drag_coefficient = 0.1

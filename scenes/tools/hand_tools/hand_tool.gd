@@ -1,11 +1,11 @@
-extends Sprite
+extends Node2D
 
 class_name HandTool
 
-var player
+var toolbelt
 
 func get_hand():
-	return player.get_node("Hand")
+	return toolbelt.player.get_node("Hand")
 
 func activate():
 	get_hand().add_child(self)
